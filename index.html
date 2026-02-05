@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/estilos.css"/>
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+
+    <title>Weather Frontend Módulo 2</title>
+
+     <style>
+        header {
+            background-image: url('assets/img/Antofagasta-832-2048x1024.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+        }
+        </style>
+
+      <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Código a ejecutar cuando el DOM esté completamente cargado
+      
+        // Hora
+        let hora = new Date();
+        console.log(hora.toLocaleTimeString());
+        
+        setInterval(() => {
+            let horaActual = new Date();
+            document.getElementById('datetime').innerHTML = '' + horaActual.toLocaleTimeString();
+        }, 1000);
+
+        // Fecha
+
+        let fecha = new Date();
+        console.log(fecha.getDay());
+        console.log(fecha.getDate());
+        console.log(fecha.getMonth());
+        console.log(fecha.getFullYear());
+
+        let diaSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+        console.log(diaSemana[fecha.getDay()]);
+
+        let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        console.log(meses[fecha.getMonth()]);
+
+        console.log('Hoy es ' + diaSemana[fecha.getDay()] + ' ' + fecha.getDate() + ' de ' + meses[fecha.getMonth()] + ' del ' + fecha.getFullYear());
+        
+        document.getElementById('fecha').innerHTML = 'Hoy es ' + diaSemana[fecha.getDay()] + ' ' + fecha.getDate() + ' de ' + meses[fecha.getMonth()] + ' del ' + fecha.getFullYear();
+      
+
+        });
+      </script>
+</head>
+<header>
+    
+    
+    <div class="container-fluid text-white text-center m-0 p-5">
+    <h1 class="display-3 fw-bold">Meteorología: Región de Antofagasta</h1>
+</div>
+
+</header>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!--MAIN, aquí voy a dejar las cards correspondientes-->
+<main>
+
+<section>
+    <div class="container-fluid
+">
+        <div class="row">
+            <div class="col-12 text-center text-dark p-5">
+                    <h2>Clima en Antofagasta</h2>
+                    <p id="datetime"></p>
+                    <p id="fecha"></p>
+
+                        <div id="antofagasta" class="card mx-auto p-3 shadow-lg" style="width: rem;">
+                             <img src="assets/img/afta-laportada.jpg" class="card-img-top" alt="Antofagasta">
+
+                                <div class="card-body text-dark">
+                                        <h5 class="card-title">Antofagasta</h5>
+                                        <p class="card-text">Capital de la Región de Antofagasta.</p>
+                                        <p class="card-text">
+                                        <small class="text-body-secondary">Actualizado hace 3 mins</small></p>
+                                        
+                                </div>
+                        </div>
+                    
+            </div>
+        </div>        
+    </div>
+
+    <!-- otras ciudades-->
+            <div class="container-fluid p-5">
+                <div class="row">
+                    <div class="col text-center">
+                        <h2>Otras ciudades de la región</h2>
+                        <p>Acá van grupos de cards con otras ciudades de la región.</p>
+                    </div>
+               
+
+    <!-- cards ciudades-->
+     <div class="container">
+        <div class="row">
+            <div class="col-12">
+     
+     <div class="card-group col-12 mx-auto">
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=1" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Calama</h5>
+      <p class="card-text">Ciudad info 1.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=2" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Tocopilla</h5>
+      <p class="card-text">Ciudad info 2.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=3" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mejillones</h5>
+      <p class="card-text">Ciudad info 3.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=4" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Taltal</h5>
+      <p class="card-text">Ciudad info 4.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=5" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">San Pedro de Atacama</h5>
+      <p class="card-text">Ciudad info 5.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=6" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">María Elena</h5>
+      <p class="card-text">Ciudad info 6.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=7" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Sierra Gorda</h5>
+      <p class="card-text">Ciudad info 7.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=8" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ollagüe</h5>
+      <p class="card-text">Ciudad info 8.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=9" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Balneario Hornitos</h5>
+      <p class="card-text">Ciudad info 9.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card p-2">
+    <img src="https://picsum.photos/100?random=10" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Balneario Juan López</h5>
+      <p class="card-text">Ciudad info 10.</p>
+      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+ </div>        
+</div>
+
+
+</div>
+</div>
+</div>
+
+</section>      
+</main>
+    
+<footer class="container-fluid text-white p-5" style="background-color: rgb(23, 23, 23);">
+        <div class="row">
+            <div class="col-md-4 mb-3 border border-0">
+                <img src="assets/img/vector_icon_shadow_by_nibroc_rock_d8obhth.png" alt="Logo-shadow" width="50">
+                <p class="d-inline">&copy;2025 Bootcamp FrontEnd Javascript</p>
+            </div>
+            <div class="col-md-4 mb-3 text-center border border-0">
+                <h4>Mapa del Sitio</h4>
+                <hr class="text-white">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="jquery.html">JQuery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="countries.html">Countries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="randomuserme.html">RandomeUser API</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="pokeapi.html">PokeApi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="openweathermap.html">OpenWeatherMap API</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-transparent border border-0">
+                    <div class="card-header border border-0">
+                        <h4 class="card-title text-white">Subscríbete a nuestro newsletter!!!!</h4>
+                    </div>
+                    <div class="card-body border border-0">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico">
+                            <button class="btn btn-outline-light" type="button">Enviar</button>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center border border-0">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://instagram.com" target="_blank">
+                                    <i class="bi bi-instagram fs-1 text-white"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://tiktok.com" target="_blank">
+                                    <i class="bi bi-tiktok fs-1 text-white"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://www.facebook.com" target="_blank">
+                                    <i class="bi bi-facebook fs-1 text-white"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="https://linkedin.com" target="_blank">
+                                    <i class="bi bi-linkedin fs-1 text-white"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="text-white">
+        <div class="row text-center">
+            <p>Sitio para GitHub</p>
+        </div>
+    </footer>
+
+        <!-- CDNs -->
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+crossorigin="anonymous"></script>
+
+
+</body>
+</html>
