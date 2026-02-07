@@ -61,35 +61,32 @@
       </script>
 </head>
 <header>
-    
-    
     <div class="container-fluid text-white text-center m-0 p-5">
     <h1 class="display-3 fw-bold">Meteorología: Región de Antofagasta</h1>
 </div>
-
 </header>
 <body>
-
+<!--Navbarrr-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" target="_blank" href="https://youtube.com/playlist?list=OLAK5uy_m9GPZ4N_Mo8R-cwN8UUjf_BDio9YixyVg&si=B8z3y9_gtlPAcXJ3">Escuchar</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Ver
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" target="_blank" href="https://youtu.be/ieJbuTGfhsk?si=fKkak6OWs8ot5mCG">Videoclip</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -108,18 +105,31 @@
 </nav>
 
 <!--MAIN, aquí voy a dejar las cards correspondientes-->
-<main>
+<main class="container-fluid">
+<div class="row align-items-stretch">
 
-<section>
-    <div class="container-fluid
-">
+<!--aside izquierdo-->
+<aside class="col-md-4 text-dark text-center">
+  
+  <h3 class="mt-5">Pronóstico del Clima</h3>
+     <!-- Elfsight Weather | Untitled Weather -->
+      <div class="widget-clima mt-5">
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-6471a63c-b0aa-459e-8f05-a3961da49ea1" data-elfsight-app-lazy></div>
+</div>
+</aside>
+
+<!--seccion 1-->
+
+<section class="col-md-4">
+    <div class="container">
         <div class="row">
             <div class="col-12 text-center text-dark p-5">
-                    <h2>Clima en Antofagasta</h2>
+                    <h2>Antofagasta</h2>
                     <p id="datetime"></p>
                     <p id="fecha"></p>
 
-                        <div id="antofagasta" class="card mx-auto p-3 shadow-lg" style="width: rem;">
+                        <div id="antofagasta" class="card mx-auto shadow-lg" style="width: 100%;">
                              <img src="assets/img/afta-laportada.jpg" class="card-img-top" alt="Antofagasta">
 
                                 <div class="card-body text-dark">
@@ -128,6 +138,9 @@
                                         <p id="clima-principal"></p>
                                         <p class="card-text">
                                         <small class="text-body-secondary"></small></p>
+                                        <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                                         
                                 </div>
                         </div>
@@ -135,13 +148,34 @@
             </div>
         </div>        
     </div>
+</section>
 
+    <!--fin seccion 1-->
+
+    <!--aside derecho-->
+
+<aside class="col-md-4 text-dark text-center">
+      
+      <div id="mapa-contenedor" class="container p-5">
+        <h3>Mapa Antofagasta</h3>
+        <div class="row p-5">
+            
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116970.56186773958!2d-70.48712950669466!3d-23.62834804217833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96a58a1999656469%3A0x9fbe15f44d1e6f96!2sAntofagasta!5e0!3m2!1ses!2scl!4v1770477094516!5m2!1ses!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
+        </div>    
+      </div>
+    </aside>
+</div> <!--div de row que abarca todo el main-->
+
+<!-------------------------------------------------------------------------------------------->
+    <!--seccion 2-->
+<section>
     <!-- otras ciudades-->
-            <div class="container-fluid p-5">
+            <div class="container-fluid border-top">
                 <div class="row">
-                    <div class="col text-center">
-                        <h2>Otras ciudades de la región</h2>
-                        <p>Acá van grupos de cards con otras ciudades de la región.</p>
+                    <div class="col text-center my-5">
+                        <h2>Información de la Región de Antofagasta</h2>
+                        <p>En este apartado encuentras información sobre las ciudades de la región.</p>
                     </div>
                
 
@@ -160,6 +194,9 @@
                   <p class="card-text">Ciudad info 1.</p>
                   <p class="clima mt-auto"></p>
                   <p class="card-text"><small class="text-body-secondary"></small></p>
+                  <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                 </div>  
             </div>
           </div>
@@ -171,6 +208,9 @@
                         <p class="card-text">Ciudad info 2.</p>
                         <p class="clima mt-auto"></p>
                         <p class="card-text"><small class="text-body-secondary"></small></p>
+                        <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                       </div>  
                   </div>
                 </div>
@@ -182,6 +222,9 @@
                         <p class="card-text">Ciudad info 3.</p>
                         <p class="clima mt-auto"></p>
                         <p class="card-text"><small class="text-body-secondary"></small></p>
+                        <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                       </div>  
                   </div>
                 </div>
@@ -193,6 +236,9 @@
                               <p class="card-text">Ciudad info 4.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -204,6 +250,9 @@
                               <p class="card-text">Ciudad info 5.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -215,6 +264,9 @@
                               <p class="card-text">Ciudad info 6.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -226,6 +278,9 @@
                               <p class="card-text">Ciudad info 7.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -237,6 +292,9 @@
                               <p class="card-text">Ciudad info 8.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -248,6 +306,9 @@
                               <p class="card-text">Ciudad info 9.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -259,6 +320,9 @@
                               <p class="card-text">Ciudad info 10.</p>
                               <p class="clima mt-auto"></p>
                               <p class="card-text"><small class="text-body-secondary"></small></p>
+                              <button class="btn btn-secondary mt-auto btn-ver-mas">
+  Ver más
+</button>
                             </div>  
                         </div>
                       </div>
@@ -271,9 +335,19 @@
 </div>
 </div>
 
-</section>      
+
+
+</section>
+
+
+
+
 </main>
-    
+
+
+<!--Footer-->
+
+
 <footer class="container-fluid text-white p-5" style="background-color: rgb(23, 23, 23);">
         <div class="row">
             <div class="col-md-4 mb-3 border border-0">
@@ -288,26 +362,21 @@
                         <a class="nav-link text-white" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="jquery.html">JQuery</a>
+                        <a class="nav-link text-white" href="">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="countries.html">Countries</a>
+                        <a class="nav-link text-white" href="">Reclamos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="randomuserme.html">RandomeUser API</a>
+                        <a class="nav-link text-white" href="">Consultas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="pokeapi.html">PokeApi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="openweathermap.html">OpenWeatherMap API</a>
-                    </li>
+                   
                 </ul>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card bg-transparent border border-0">
                     <div class="card-header border border-0">
-                        <h4 class="card-title text-white">Subscríbete a nuestro newsletter!!!!</h4>
+                        <h4 class="card-title text-white">¡Subscríbete a nuestro Newsletter!</h4>
                     </div>
                     <div class="card-body border border-0">
                         <div class="input-group mb-3">
@@ -388,7 +457,58 @@ $(document).ready(function() {
   });
 
 });
+
+
+$(".btn-ver-mas").click(function() {
+
+  let card = $(this).closest(".card");
+  let ciudad = card.find(".card-title").text().trim();
+
+  let datos = contenidoPronostico.find(c => c.ciudad === ciudad);
+
+  if (!datos) return;
+
+  let html = "<ul class='list-group'>";
+
+  datos.semanal.forEach(d => {
+    html += `
+      <li class="list-group-item d-flex justify-content-between">
+        <span>${d.dia}</span>
+        <span>${d.estado} ${d.temp}°C</span>
+      </li>
+    `;
+  });
+
+  html += "</ul>";
+
+  $("#contenidoPronostico").html(html);
+
+  let modal = new bootstrap.Modal(
+    document.getElementById('modalPronostico')
+  );
+
+  modal.show();
+
+});
+
+
 </script>
+
+<div class="modal fade" id="modalPronostico">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Pronóstico semanal</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body" id="contenidoPronostico"></div>
+
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

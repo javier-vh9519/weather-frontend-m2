@@ -1,15 +1,17 @@
+body {margin: 0; padding: 0;}
+
 #afta-laportada{
         width: 100%;
         height: auto;
 }
 
 #antofagasta {
-    width: 90%;
+    width: 50%;
     max-width: 420px;
 }
 
 #antofagasta img {
-    height: 260px;
+    height: 120px;
     object-fit: cover;
 }
 
@@ -39,5 +41,10 @@
     transition: all 0.3s
 }
 .card:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
+}
+
+.img-fixed {
+  height: 140px;
+  object-fit: cover;
 }
